@@ -1,7 +1,7 @@
 import MenuList from "@/components/MenuList";
 import React from "react";
 
-export async function getData() {
+async function getData() {
   const res = await fetch(`http://localhost:3000/api/profile`, {
     cache: "no-store",
   });
@@ -10,7 +10,7 @@ export async function getData() {
   return data;
 }
 
-export default async function Home({ params }) {
+export default async function Home() {
   const data = await getData();
   return (
     <div className="h-full">
