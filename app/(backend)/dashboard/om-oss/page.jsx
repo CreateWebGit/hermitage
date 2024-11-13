@@ -4,7 +4,7 @@ import { ImageForm } from "@/components/image-form";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { PiInfoThin } from "react-icons/pi";
 
-export async function getData() {
+async function getData() {
   const res = await fetch("http://localhost:3000/api/profile/", {
     method: "GET",
     cache: "no-store",
