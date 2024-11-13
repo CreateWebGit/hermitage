@@ -152,10 +152,11 @@ const MenuList = ({ data }) => {
                     ref={droppableProvider.innerRef}
                     {...droppableProvider.droppableProps}
                   >
-                    {formField?.map((field, categoryIndex) => (
+                    {formField?.map((field, categoryIndex, index) => (
                       <FormSection
                         field={field}
                         categoryIndex={categoryIndex}
+                        index={index}
                         formField={formField}
                         setFormField={setFormField}
                         isEditWindow={isEditWindow}

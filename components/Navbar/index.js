@@ -375,8 +375,8 @@ const Navbar = ({ topbar = false, white }) => {
                             )}
                           >
                             <ul>
-                              {link.sublinks.map((sublink) => {
-                                return <li>{sublink.name}</li>;
+                              {link.sublinks.map((sublink, index) => {
+                                return <li key={index}>{sublink.name}</li>;
                               })}
                             </ul>
                           </div>

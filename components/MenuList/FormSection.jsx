@@ -15,6 +15,7 @@ import { RiDraggable } from "react-icons/ri";
 const FormSection = ({
   field,
   categoryIndex,
+  index,
   formField,
   setFormField,
   setEditWindow,
@@ -181,7 +182,7 @@ const FormSection = ({
   };
 
   return (
-    <div key={categoryIndex}>
+    <div key={index}>
       <Dropdown
         title={field?.categoryName}
         id={field?.categoryID}
@@ -276,7 +277,7 @@ const FormSection = ({
                     {...droppableProvider.droppableProps}
                   >
                     {field?.products.map((product, index) => (
-                      <div>
+                      <div key={index}>
                         <Draggable
                           draggableId={`${index}`}
                           index={index}
