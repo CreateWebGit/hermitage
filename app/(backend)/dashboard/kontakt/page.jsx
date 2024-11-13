@@ -2,9 +2,8 @@
 import Contact from "@/components/Contact";
 import React from "react";
 
-export async function getData(params) {
-  console.log(params);
-  const res = await fetch(`http://localhost:3000/api/profile/${params}`, {
+export async function getData() {
+  const res = await fetch(`http://localhost:3000/api/profile/`, {
     cache: "no-store",
   });
   const data = res.json();
@@ -12,7 +11,7 @@ export async function getData(params) {
 }
 
 export default async function Home({ params }) {
-  const data = await getData(params.id);
+  const data = await getData();
 
   return <Contact data={data} />;
 }
