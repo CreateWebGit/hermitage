@@ -1,3 +1,4 @@
+"use server";
 import MenuList from "@/components/MenuList";
 import React from "react";
 
