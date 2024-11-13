@@ -10,7 +10,7 @@ export async function getData() {
   return data;
 }
 
-export default async function Home({ params }) {
+export default async function Home() {
   const data = await getData();
 
   return <Contact data={data} />;
