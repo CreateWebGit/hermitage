@@ -153,17 +153,19 @@ const MenuList = ({ data }) => {
                     {...droppableProvider.droppableProps}
                   >
                     {formField?.map((field, categoryIndex, index) => (
-                      <FormSection
-                        field={field}
-                        categoryIndex={categoryIndex}
-                        index={index}
-                        formField={formField}
-                        setFormField={setFormField}
-                        isEditWindow={isEditWindow}
-                        setEditWindow={setEditWindow}
-                        isOpen={isOpen}
-                        setOpen={setOpen}
-                      />
+                      <div key={index}>
+                        <FormSection
+                          field={field}
+                          categoryIndex={categoryIndex}
+                          index={index}
+                          formField={formField}
+                          setFormField={setFormField}
+                          isEditWindow={isEditWindow}
+                          setEditWindow={setEditWindow}
+                          isOpen={isOpen}
+                          setOpen={setOpen}
+                        />
+                      </div>
                     ))}
                     {droppableProvider.placeholder}
                   </div>
