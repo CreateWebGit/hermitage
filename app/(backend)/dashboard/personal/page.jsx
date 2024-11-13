@@ -1,20 +1,19 @@
 import Teams from "@/components/Teams";
 
-export async function getData(params) {
-  console.log(params);
-  const res = await fetch(`http://localhost:3000/api/profile/${params}`, {
+async function getData() {
+  const res = await fetch(`http://localhost:3000/api/profile/`, {
     cache: "no-store",
   });
   const data = res.json();
   return data;
 }
 
-export default async function Home({ params }) {
-  const data = await getData(params.id);
+export default async function Home() {
+  const data = await getData();
 
   return (
     <div className="pt-12">
-      <Teams data={data} id={params.id} />
+      <Teams data={data} />
     </div>
   );
 }

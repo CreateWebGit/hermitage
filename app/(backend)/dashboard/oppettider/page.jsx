@@ -1,9 +1,8 @@
 import TimePicker from "@/components/TimePicker";
 import { OpenTimesForm } from "@/components/open-times-form";
 
-export async function getData(params) {
-  console.log(params);
-  const res = await fetch(`http://localhost:3000/api/profile/${params}`, {
+async function getData() {
+  const res = await fetch(`http://localhost:3000/api/profile/`, {
     cache: "no-store",
   });
   const data = res.json();
@@ -11,8 +10,8 @@ export async function getData(params) {
   return data;
 }
 
-export default async function Home({ params }) {
-  const data = await getData(params.id);
+export default async function Home() {
+  const data = await getData();
   return (
     <div className="flex justify-center items-start h-[2000px]">
       <div className="w-[700px]">
