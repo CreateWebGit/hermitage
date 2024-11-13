@@ -220,8 +220,8 @@ const MenuList = ({ data }) => {
                     ref={droppableProvider.innerRef}
                     {...droppableProvider.droppableProps}
                   >
-                    {formField?.map((field, categoryIndex) => (
-                      <div>
+                    {formField?.map((field, categoryIndex, index) => (
+                      <div key={index}>
                         {/*
                         <Dropdown
                           title={field?.categoryName}
