@@ -1,4 +1,3 @@
-import TimePicker from "@/components/TimePicker";
 import { OpenTimesForm } from "@/components/open-times-form";
 
 async function getData() {
