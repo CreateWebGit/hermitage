@@ -1,7 +1,8 @@
 import { OpenTimesForm } from "@/components/open-times-form";
 
 async function getData() {
-  const res = await fetch(`http://localhost:3000/api/profile/`, {
+  let fetch_path = process.env.NEXT_PUBLIC_BACKEND_URL + "/api/profile/";
+  const res = await fetch(fetch_path, {
     cache: "no-store",
   });
   const data = res.json();

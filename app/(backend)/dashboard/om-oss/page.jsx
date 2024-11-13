@@ -5,7 +5,8 @@ import { HiOutlineHomeModern } from "react-icons/hi2";
 import { PiInfoThin } from "react-icons/pi";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/profile/", {
+  let fetch_path = process.env.NEXT_PUBLIC_BACKEND_URL + "/api/profile/";
+  const res = await fetch(fetch_path, {
     method: "GET",
     cache: "no-store",
   });
