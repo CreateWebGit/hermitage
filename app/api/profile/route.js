@@ -1,6 +1,6 @@
 import { connectMongoDB } from "@/lib/mymongodb";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 
 import Profile from "@/models/profile";
 import { NextResponse } from "next/server";
