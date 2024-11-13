@@ -52,21 +52,23 @@ const TimePickerDropdown = ({
           )}
         >
           {range(0, 23).map((value, index) => (
-            <TimePickerDropdownItem
-              index={index}
-              value={value}
-              isSelected={timeValues.hour === value}
-              onClick={() => {
-                setTimeValues((oldValues) => {
-                  return { ...oldValues, hour: value };
-                });
-              }}
-              onSelected={(scrollValue) => {
-                if (isOpen) {
-                  setCurrentScrollValueHours(scrollValue);
-                }
-              }}
-            />
+            <div key={index}>
+              <TimePickerDropdownItem
+                index={index}
+                value={value}
+                isSelected={timeValues.hour === value}
+                onClick={() => {
+                  setTimeValues((oldValues) => {
+                    return { ...oldValues, hour: value };
+                  });
+                }}
+                onSelected={(scrollValue) => {
+                  if (isOpen) {
+                    setCurrentScrollValueHours(scrollValue);
+                  }
+                }}
+              />
+            </div>
           ))}
         </div>
         <div
@@ -77,21 +79,23 @@ const TimePickerDropdown = ({
           )}
         >
           {range(0, 59).map((value, index) => (
-            <TimePickerDropdownItem
-              index={index}
-              value={value}
-              isSelected={timeValues.minutes === value}
-              onClick={() => {
-                setTimeValues((oldValues) => {
-                  return { ...oldValues, minutes: value };
-                });
-              }}
-              onSelected={(scrollValue) => {
-                if (isOpen) {
-                  setCurrentScrollValueMinutes(scrollValue);
-                }
-              }}
-            />
+            <div key={index}>
+              <TimePickerDropdownItem
+                index={index}
+                value={value}
+                isSelected={timeValues.minutes === value}
+                onClick={() => {
+                  setTimeValues((oldValues) => {
+                    return { ...oldValues, minutes: value };
+                  });
+                }}
+                onSelected={(scrollValue) => {
+                  if (isOpen) {
+                    setCurrentScrollValueMinutes(scrollValue);
+                  }
+                }}
+              />
+            </div>
           ))}
         </div>
         <div
@@ -102,21 +106,23 @@ const TimePickerDropdown = ({
           )}
         >
           {range(0, 59).map((value, index) => (
-            <TimePickerDropdownItem
-              index={index}
-              value={value}
-              isSelected={timeValues.secounds === value}
-              onClick={() => {
-                setTimeValues((oldValues) => {
-                  return { ...oldValues, secounds: value };
-                });
-              }}
-              onSelected={(scrollValue) => {
-                if (isOpen) {
-                  setCurrentScrollValueSecounds(scrollValue);
-                }
-              }}
-            />
+            <div key={index}>
+              <TimePickerDropdownItem
+                index={index}
+                value={value}
+                isSelected={timeValues.secounds === value}
+                onClick={() => {
+                  setTimeValues((oldValues) => {
+                    return { ...oldValues, secounds: value };
+                  });
+                }}
+                onSelected={(scrollValue) => {
+                  if (isOpen) {
+                    setCurrentScrollValueSecounds(scrollValue);
+                  }
+                }}
+              />
+            </div>
           ))}
         </div>
         <div className="w-64 px-2 py-3 border-t border-white/50">
