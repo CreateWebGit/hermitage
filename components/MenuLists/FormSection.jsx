@@ -86,7 +86,7 @@ const FormSection = ({ field, categoryIndex, formField, setFormField }) => {
   };
 
   return (
-    <div>
+    <div key={categoryIndex}>
       <Dropdown
         title={field?.categoryName}
         id={field?.categoryID}

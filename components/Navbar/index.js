@@ -169,11 +169,12 @@ const Navbar = ({ topbar = false, white }) => {
             </div>
             <div className="hidden md:flex flex-col">
               <ul className="flex list-none">
-                {navLinks.map((link) => {
+                {navLinks.map((link, index) => {
                   return (
                     <>
                       {link.sublinks ? (
                         <div
+                          key={index}
                           className="relative ml-5"
                           onMouseEnter={() => setSublinks(true)}
                           onMouseLeave={() => setSublinks(false)}

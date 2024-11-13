@@ -181,7 +181,7 @@ const FormSection = ({
   };
 
   return (
-    <div>
+    <div key={categoryIndex}>
       <Dropdown
         title={field?.categoryName}
         id={field?.categoryID}

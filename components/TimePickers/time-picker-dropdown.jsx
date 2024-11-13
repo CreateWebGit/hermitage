@@ -51,8 +51,9 @@ const TimePickerDropdown = ({
             `${style.dropdown}`
           )}
         >
-          {range(0, 23).map((value) => (
+          {range(0, 23).map((value, index) => (
             <TimePickerDropdownItem
+              index={index}
               value={value}
               isSelected={timeValues.hour === value}
               onClick={() => {
@@ -75,8 +76,9 @@ const TimePickerDropdown = ({
             `${style.dropdown}`
           )}
         >
-          {range(0, 59).map((value) => (
+          {range(0, 59).map((value, index) => (
             <TimePickerDropdownItem
+              index={index}
               value={value}
               isSelected={timeValues.minutes === value}
               onClick={() => {

@@ -363,11 +363,13 @@ const Teams = ({ data, id }) => {
                             {stuff.speciality.map((item, i, { length }) => {
                               if (i + 1 === length) {
                                 return (
-                                  <div className=" inline-block">{item}</div>
+                                  <div key={i} className=" inline-block">
+                                    {item}
+                                  </div>
                                 );
                               }
                               return (
-                                <div className=" inline-block">
+                                <div key={i} className=" inline-block">
                                   {item},&nbsp;
                                 </div>
                               );

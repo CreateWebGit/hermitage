@@ -2,7 +2,13 @@ import { padNumberToString } from "@/utils/timeConverter";
 import React, { useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-const TimePickerDropdownItem = ({ value, isSelected, onClick, onSelected }) => {
+const TimePickerDropdownItem = ({
+  value,
+  isSelected,
+  onClick,
+  onSelected,
+  index,
+}) => {
   let itemRef = useRef(null);
 
   useEffect(() => {
@@ -18,6 +24,7 @@ const TimePickerDropdownItem = ({ value, isSelected, onClick, onSelected }) => {
 
   return (
     <div
+      key={index}
       ref={itemRef}
       className={twMerge(
         "text-center text-xs text-white w-full cursor-pointer rounded-md flex items-center justify-center py-1 px-2 font-semibold hover:bg-white/10",
