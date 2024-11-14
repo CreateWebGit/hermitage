@@ -46,6 +46,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
       <body
         className={`${forum.variable} ${GeistSans.variable} ${islandMoments.variable}`}
       >

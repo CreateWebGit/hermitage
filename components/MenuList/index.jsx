@@ -22,10 +22,6 @@ const MenuList = ({ data }) => {
 
   console.log(formField);
 
-  useEffect(() => {
-    document.documentElement.requestFullscreen();
-  }, []);
-
   const handleDragStart = () => {
     toggleExpand(false);
   };
