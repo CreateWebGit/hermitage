@@ -8,6 +8,10 @@ import { CgReorder } from "react-icons/cg";
 import { cn } from "@/utils/utils";
 import CategoryNamePopup from "./CategoryNamePopup";
 
+useEffect(() => {
+  document.documentElement.requestFullscreen();
+}, []);
+
 const MenuList = ({ data }) => {
   const productsData = data?.productsList;
   console.log(productsData);

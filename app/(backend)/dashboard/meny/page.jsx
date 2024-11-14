@@ -1,10 +1,6 @@
 "use server";
 import MenuList from "@/components/MenuList";
-import React, { useEffect } from "react";
-
-useEffect(() => {
-  document.documentElement.requestFullscreen();
-}, []);
+import React from "react";
 
 async function getData() {
   let fetch_path = process.env.NEXT_PUBLIC_BACKEND_URL + "/api/profile/";
