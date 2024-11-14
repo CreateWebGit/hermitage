@@ -8,7 +8,15 @@ import { RiDraggable } from "react-icons/ri";
 import { CiEdit } from "react-icons/ci";
 import { Trash2 } from "lucide-react";
 
-const Dropdown = ({ title, onClick, children, expanded, categoryIndex }) => {
+const Dropdown = ({
+  title,
+  onClick,
+  children,
+  expanded,
+  categoryIndex,
+  isSortable,
+  setSortable,
+}) => {
   console.log("haha", categoryIndex);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -36,9 +44,10 @@ const Dropdown = ({ title, onClick, children, expanded, categoryIndex }) => {
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
           >
-            <div className="p-2" {...draggableProvider.dragHandleProps}>
-              <RiDraggable />
+            <div className="p-2 h-4 w-4" {...draggableProvider.dragHandleProps}>
+              {isSortable ? <RiDraggable /> : ""}
             </div>
+
             <div
               className={
                 title === "Ny sektion" ? "text-gray-300" : "text-black"

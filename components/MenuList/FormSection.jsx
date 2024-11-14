@@ -13,6 +13,8 @@ import { CiEdit } from "react-icons/ci";
 import { RiDraggable } from "react-icons/ri";
 
 const FormSection = ({
+  isSortable,
+  setSortable,
   field,
   categoryIndex,
   index,
@@ -186,10 +188,15 @@ const FormSection = ({
       <Dropdown
         title={field?.categoryName}
         id={field?.categoryID}
-        onClick={() => toggle(field?.categoryID)}
+        onClick={() => {
+          toggle(field?.categoryID);
+          setSortable(false);
+        }}
         expanded={field?.expanded}
         field={field}
         categoryIndex={categoryIndex}
+        isSortable={isSortable}
+        setSortable={setSortable}
       >
         <div className="flex flex-row items-end bg-white p-4 mb-4 mt-0 border-r border-l border-b border-b-gray-150 border-l-gray-150 border-r-gray-150">
           <div

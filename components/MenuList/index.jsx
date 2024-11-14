@@ -16,6 +16,9 @@ const MenuList = ({ data }) => {
   const [isOpen, setOpen] = useState(false);
   const [isCategoryName, setCategoryName] = useState("");
   const [isEditWindow, setEditWindow] = useState(false);
+  const [isSortable, setSortable] = useState(false);
+
+  console.log(isSortable);
 
   console.log(formField);
 
@@ -85,6 +88,11 @@ const MenuList = ({ data }) => {
     setFormField(_formField);
   };
 
+  const handleSort = () => {
+    toggleExpand();
+    setSortable((prevCheck) => !prevCheck);
+  };
+
   const handleNewSectionSubmit = async (e) => {
     e.preventDefault();
 
@@ -132,29 +140,37 @@ const MenuList = ({ data }) => {
   return (
     <div className="bg-slate-100 w-full h-full relative ">
       <DragDropContext onDragEnd={handleDragEnd} onDragStart={handleDragStart}>
-        <div className=" bg-slate-100 w-full min-h-full">
+        <div className=" bg-slate-100 min-h-full px-8">
           <form>
-            <div className=" flex flex-col w-[80%] m-auto  gap-4 pt-8 ">
-              <div className="flex justify-end gap-5">
-                <button type="button" onClick={() => toggleExpand(false)}>
-                  <CgReorder />
+            <div className="flex flex-col m-auto pt-8 ">
+              <div className="flex justify-end gap-5 mb-4">
+                <button
+                  className=" flex items-center gap-2 bg-blue-600 px-2 py-1 rounded-md text-white shadow-lg"
+                  type="button"
+                  onClick={() => handleSort()}
+                >
+                  Sortera <CgReorder />
                 </button>
-                <button type="button" onClick={() => toggleExpand(false)}>
-                  <BsArrowsCollapse />
+                <button
+                  className=" flex items-center gap-2 bg-blue-600 px-2 py-1 rounded-md text-white shadow-lg"
+                  type="button"
+                  onClick={() => toggleExpand(false)}
+                >
+                  Kollapsa <BsArrowsCollapse />
                 </button>
               </div>
               <Droppable droppableId="haha">
                 {(droppableProvider, snapshot) => (
                   <div
-                    className={
-                      snapshot.isDraggingOver ? "bg-orange-300 px-8" : " px-8"
-                    }
+                    className={snapshot.isDraggingOver ? "" : ""}
                     ref={droppableProvider.innerRef}
                     {...droppableProvider.droppableProps}
                   >
                     {formField?.map((field, categoryIndex, index) => (
                       <div key={index}>
                         <FormSection
+                          isSortable={isSortable}
+                          setSortable={setSortable}
                           field={field}
                           categoryIndex={categoryIndex}
                           index={index}
